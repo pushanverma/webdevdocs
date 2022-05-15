@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KGF</title>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> -->
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+ 
+</body>
+<script type="text/babel">
+    // 👉using only Javascript
+    // let ele =document.createElement('h1');
+    // ele.innerText="Hello";
+    // let root =document.getElementById('root');
+    // root.appendChild(ele)
+
+    //👉using React (using CDN)
+    // let root =document.getElementById('root');
+    // let ele =React.createElement('h1', {
+    //     children:['Hello']
+    // })
+    // console.log(ele);
+    // ReactDOM.render(ele,root)
+
+    //👉using JSX(Babel)
+    // function Ele(){
+    //     return (
+    //         <>
+    //         <h1>Hello</h1>
+    //         </>
+    //     );
+    // }
+    //  ReactDOM.render(<Ele />, document.getElementById("root"));
+
+
+    //👉Understanding Reusabiity of Components
+     function Child({name="Pushan",age,marks})
+     {
+         return  (
+             <>
+             <h1>Hello {name}</h1>
+             <h2>{marks}</h2>
+             <h3>{age}</h3>
+             </>);
+     }
+     function Child2({place})
+     {
+         return <h1>Good Bye {place}</h1>;
+     }
+
+     function Parent()
+     {
+         return(
+            <>
+            <Child name ="Mrinal" age="23" marks="100" />
+            <Child2 place ="delhi" />
+            <Child name ="Steve"/>
+            <Child2 />
+            </>
+         );
+     }
+     ReactDOM.render(<Parent />,document.getElementById("root"));
+
+</script>
+</html>
